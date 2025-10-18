@@ -1,0 +1,6 @@
+@EnumerationPattern.WebDemo_HostAddress = http://localhost:5044
+
+GET {{EnumerationPattern.WebDemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
