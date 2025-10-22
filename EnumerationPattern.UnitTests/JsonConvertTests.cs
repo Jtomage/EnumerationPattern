@@ -1,5 +1,7 @@
 ﻿using System.Text.Json;
 
+using EnumerationPattern.JsonConverters;
+
 namespace EnumerationPattern.UnitTests;
 
 public class JsonConvertTests

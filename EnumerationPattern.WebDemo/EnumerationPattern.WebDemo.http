@@ -4,3 +4,11 @@ GET {{EnumerationPattern.WebDemo_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{EnumerationPattern.WebDemo_HostAddress}}/api/Enumeration
+Accept: application/json
+
+###
+
+GET {{EnumerationPattern.WebDemo_HostAddress}}/api/Enumeration?status=notStarted&paymentType=debitCard&relationshipType=manyToMany
+Accept: application/json

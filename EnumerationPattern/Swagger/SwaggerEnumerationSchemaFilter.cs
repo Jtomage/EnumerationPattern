@@ -5,7 +5,7 @@ using Microsoft.OpenApi.Models;
 
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace EnumerationPattern;
+namespace EnumerationPattern.Swagger;
 
 public class SwaggerEnumerationSchemaFilter : ISchemaFilter
 {

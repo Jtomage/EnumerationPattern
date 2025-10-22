@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace EnumerationPattern
+namespace EnumerationPattern.JsonConverters
 {
 	public class JsonStringEnumerationConverter<TEnum, TId>
 		: JsonConverter<TEnum> where TEnum : Enumeration<TId> where TId : notnull
