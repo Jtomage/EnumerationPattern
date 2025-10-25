@@ -43,5 +43,26 @@
 		}
 
 		#endregion
+
+		[Fact]
+		public void FromIdTest()
+		{
+			// Act
+			var result = WorkflowStatus.FromId<WorkflowStatus>(WorkflowStatus.InProgress.Id);
+
+			// Assert
+			Assert.Equal(WorkflowStatus.InProgress, result);
+		}
+
+		[Fact]
+		public void FromBaseTextTest()
+		{
+			// Act
+			var result = WorkflowStatus.FromBaseText<WorkflowStatus>(WorkflowStatus.Touched.BaseText);
+
+			// Assert
+			Assert.Equal(WorkflowStatus.Touched, result);
+		}
+
 	}
 }

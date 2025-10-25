@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumerationPattern.DataTests", "EnumerationPattern.DataTests\EnumerationPattern.DataTests.csproj", "{08ED45E2-2CFC-423F-89FC-2D23022A643F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{5DC64D68-E48C-4DD7-8E78-85D9FD1762A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DC64D68-E48C-4DD7-8E78-85D9FD1762A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DC64D68-E48C-4DD7-8E78-85D9FD1762A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08ED45E2-2CFC-423F-89FC-2D23022A643F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08ED45E2-2CFC-423F-89FC-2D23022A643F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08ED45E2-2CFC-423F-89FC-2D23022A643F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08ED45E2-2CFC-423F-89FC-2D23022A643F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

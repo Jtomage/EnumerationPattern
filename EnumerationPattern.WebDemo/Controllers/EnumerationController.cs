@@ -46,7 +46,7 @@ public class EnumerationController : ControllerBase
 	{
 		var options = new JsonSerializerOptions()
 		{
-			Converters = { new JsonStringEnumerationConvertFactory(StringCase.SnakeUpperCase) }
+			Converters = { new JsonStringEnumerationConverterFactory(StringCase.SnakeUpperCase) }
 		};
 
 		return new JsonResult(model, options);
@@ -64,7 +64,7 @@ public class EnumerationController : ControllerBase
 	{
 		var options = new JsonSerializerOptions()
 		{
-			Converters = { new JsonStringEnumerationConvertFactory(StringCase.KebabLowerCase) },
+			Converters = { new JsonStringEnumerationConverterFactory(StringCase.KebabLowerCase) },
 			PropertyNamingPolicy = JsonNamingPolicy.CamelCase
 		};
 
@@ -82,7 +82,7 @@ public class EnumerationController : ControllerBase
 	{
 		var options = new JsonSerializerOptions()
 		{
-			Converters = { new JsonStringEnumerationConvertFactory(StringCase.SnakeLowerCase) },
+			Converters = { new JsonStringEnumerationConverterFactory(StringCase.SnakeLowerCase) },
 		};
 
 		return new JsonResult(model, options);

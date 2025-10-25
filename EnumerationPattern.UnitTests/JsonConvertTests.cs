@@ -15,7 +15,7 @@ public class JsonConvertTests
 		var options = new JsonSerializerOptions()
 		{
 			PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
-			Converters = { new JsonStringEnumerationConvertFactory(StringCase.SnakeLowerCase) }
+			Converters = { new JsonStringEnumerationConverterFactory(StringCase.SnakeLowerCase) }
 		};
 
 		// Act
@@ -33,7 +33,7 @@ public class JsonConvertTests
 		var testData = new TestData();
 		var options = new JsonSerializerOptions()
 		{
-			Converters = { new JsonStringEnumerationConvertFactory(StringCase.CamelCase) }
+			Converters = { new JsonStringEnumerationConverterFactory(StringCase.CamelCase) }
 		};
 
 		// Act

@@ -15,7 +15,7 @@ builder.Services
 	.AddJsonOptions(options =>
 	{
 		// Add Json Converter for responses
-		options.JsonSerializerOptions.Converters.Add(new JsonStringEnumerationConvertFactory(StringCase.CamelCase));
+		options.JsonSerializerOptions.Converters.Add(new JsonStringEnumerationConverterFactory(StringCase.CamelCase));
 	});
 
 //Add Json String Enumeration Converter Factory for minimal api

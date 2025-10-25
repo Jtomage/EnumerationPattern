@@ -72,13 +72,13 @@ public abstract class Enumeration<TId>(TId id, string baseText) : Enumeration,
 
 	#region Static Methods
 
-	public static new IEnumerable<T> GetAll<T>() where T : Enumeration<TId>
+	public static new IEnumerable<TEnum> GetAll<TEnum>() where TEnum : Enumeration<TId>
 	{
-		var enumList = typeof(T).GetFields(BindingFlags.Public |
+		var enumList = typeof(TEnum).GetFields(BindingFlags.Public |
 														BindingFlags.Static |
 														BindingFlags.DeclaredOnly)
 									.Select(f => f.GetValue(null))
-									.Cast<T>();
+									.Cast<TEnum>();
 
 		return enumList;
 	}
@@ -109,7 +109,15 @@ public abstract class Enumeration<TId>(TId id, string baseText) : Enumeration,
 
 	#region Parsing
 
-	private static bool TryParse<TEnum>(IEnumerable<TEnum> allEnums, Func<TEnum, bool> predicate, [MaybeNullWhen(false)] out TEnum? result)
+	/// <summary>
+	/// Parsing using a function
+	/// </summary>
+	/// <typeparam name="TEnum"></typeparam>
+	/// <param name="allEnums"></param>
+	/// <param name="predicate"></param>
+	/// <param name="result"></param>
+	/// <returns></returns>
+	protected static bool TryParse<TEnum>(IEnumerable<TEnum> allEnums, Func<TEnum, bool> predicate, [MaybeNullWhen(false)] out TEnum? result)
 		where TEnum : Enumeration<TId>
 	{
 		result = allEnums.FirstOrDefault(predicate);
@@ -119,6 +127,14 @@ public abstract class Enumeration<TId>(TId id, string baseText) : Enumeration,
 			return false;
 	}
 
+	/// <summary>
+	/// Parsing when String Case is known
+	/// </summary>
+	/// <typeparam name="TEnum"></typeparam>
+	/// <param name="stringCase"></param>
+	/// <param name="enumString"></param>
+	/// <param name="result"></param>
+	/// <returns></returns>
 	public static bool TryParse<TEnum>(StringCase stringCase, string? enumString, [MaybeNullWhen(false)] out TEnum? result)
 		where TEnum : Enumeration<TId>
 	{

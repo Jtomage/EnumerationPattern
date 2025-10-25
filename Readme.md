@@ -83,10 +83,9 @@ public static bool TryParse([NotNullWhen(true) string? s, IFormatProvider? provi
 #### OR
 
 Be done Morphic that can been seen on the EnumerationParsable class in the swagger
-folder.
+folder. This is implemented by the PaymentType Model found in the WebDemo.
 
-Also included is an exmple using ModelBinder. 
-
+Also included is an example using ModelBinder. 
 
 ## Data Layer
 
@@ -94,4 +93,29 @@ TO DO show examples of how use Enumeration Pattern / class on the data layer
 
 ### Entity Framework
 
+Added the OnCreatingModel Entity Conversion which shows how to convert the Enumeration
+Class to use the ID for CRUD operations. 
+
+``` C#
+    modelBuilder.Entity<SimpleModel>(entity =>
+    {
+      entity.HasKey(x => x.Id);
+
+      // add conversion to use Workflow status when stored in database
+      entity.Property(p => p.Status)
+        .HasConversion
+        (
+          c => c.Id,
+          c => WorkflowStatus.FromId<WorkflowStatus>(c)
+        );
+    });
+```
+
 ### MongoDb
+
+Created a simple a unit test using Mongo2Go and InMemory
+Database for Mongo. 
+
+Created a custom EnumerationBsonSerializer and EnumerationBsonSerializer
+Provider that will store the case string as the value instead of the whole
+class.

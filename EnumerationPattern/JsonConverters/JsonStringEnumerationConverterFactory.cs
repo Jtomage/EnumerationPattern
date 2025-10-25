@@ -3,13 +3,13 @@ using System.Text.Json.Serialization;
 
 namespace EnumerationPattern.JsonConverters;
 
-public class JsonStringEnumerationConvertFactory : JsonConverterFactory
+public class JsonStringEnumerationConverterFactory : JsonConverterFactory
 {
 	private readonly StringCase _writeStringCase;
 
 	private readonly StringCase? _readStringCase;
 
-	public JsonStringEnumerationConvertFactory(StringCase writeStringCase, StringCase? readStringCase = null)
+	public JsonStringEnumerationConverterFactory(StringCase writeStringCase, StringCase? readStringCase = null)
 	{
 		_writeStringCase = writeStringCase;
 		_readStringCase = readStringCase;
